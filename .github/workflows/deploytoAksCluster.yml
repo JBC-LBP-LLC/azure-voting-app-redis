@@ -13,7 +13,7 @@ jobs:
     - name: Create ACR
       id: create-acr
       run: |
-        az acr create -n acramerilifepoc -g rg-amerilife-poc --location "East US" --sku Basic --admin-enabled
+        az acr create -n acramerilifepoc -g acramerilifepoca232-rg --location "East US" --sku Basic --admin-enabled
         echo "::set-output name=acr_username::`az acr credential show -n acramerilifepoc --query username | xargs`"
         echo "::set-output name=acr_password::`az acr credential show -n acramerilifepoc --query passwords[0].value | xargs`"
         echo "::add-mask::`az acr credential show -n acramerilifepoc --query passwords[0].value | xargs`"
