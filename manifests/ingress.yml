@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aksamerilifepoc-83be"
+    labels:
+        app: "aksamerilifepoc-83be"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: aks-amerilife-poc-aksamerilifepoc-83be.0420ed95f3bf4e71a7ea.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aksamerilifepoc-83be"
+                servicePort: 80
